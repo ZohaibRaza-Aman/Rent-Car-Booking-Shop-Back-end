@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
   },
   "author": "zohaibraza",
   "license": "ISC",
@@ -22,3 +24,5 @@
     "nodemon": "^3.0.1"
   }
 }
+
+
