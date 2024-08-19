@@ -3,22 +3,21 @@ const cors = require('cors');
 const mongoose = require("mongoose");
 const CarList = require("./Router/CarList");
 const dotenv = require('dotenv');
-const app = express(); 
-
-dotenv.config();
-
+const app = express();
 app.use(express.json())
 app.use(cors());
+dotenv.config();
 
 app.use("/api/cars",CarList);
 
-mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true, useUnifiedTopology: true })
-.then(() => {
-  const PORT = process.env.PORT || 3001; // Fallback to 3000 if PORT is not defined in .env
-  app.listen(PORT, () => {
-    console.log(`Database Connected Successfully and Server is Listening on port ${PORT}`);
-  });
-})
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(
+        "Database Connected Successfully and Server is Listening on this port 3001"
+      );
+    });
+  })
   .catch((err) => {
     console.log(err,"Connection Faild");
   });
