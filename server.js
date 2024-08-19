@@ -14,7 +14,7 @@ mangoose.connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(process.env.PORT, () => {
       console.log(
-        "Database Connected Successfully and Server is Listening on this port 3001"
+        "Database Connected Successfully and Server is Listening on this port 3000"
       );
     });
   })
